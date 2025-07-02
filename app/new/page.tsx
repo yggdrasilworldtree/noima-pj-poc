@@ -3,10 +3,8 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import type { Database } from '@/types/supabase'
-
-const supabase = createClient<Database>()
 
 export default function NewTreePage() {
   const router = useRouter()

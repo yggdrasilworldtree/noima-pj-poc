@@ -4,10 +4,8 @@
 
 import { useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import type { Database } from '@/types/supabase'
-
-const supabase = createClient<Database>()
 
 export default function ZineEditorPage() {
   const { id } = useParams()

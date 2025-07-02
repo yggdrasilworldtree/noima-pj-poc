@@ -1,10 +1,9 @@
 //✅ B10 get-tree/route.ts（単体取得API）
 
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  const supabase = createClient()
   const body = await req.json()
   const { id } = body
 

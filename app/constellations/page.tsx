@@ -4,10 +4,8 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import type { Database } from '@/types/supabase'
-
-const supabase = createClient<Database>()
 
 export default function ConstellationsPage() {
   const [constellations, setConstellations] = useState<any[]>([])

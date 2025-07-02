@@ -1,10 +1,9 @@
 //✅ B7 create-graft/route.ts（接ぎ木生成API）
 
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  const supabase = createClient()
   const body = await req.json()
   const { tree_id, text } = body
 

@@ -1,10 +1,9 @@
 //✅ B11 list-trees/route.ts（一覧取得API）
 
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const supabase = createClient()
 
   const { data, error } = await supabase
     .from('trees')

@@ -4,10 +4,10 @@
 
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import type { Database } from '@/types/supabase'
 
-const supabase = createClient<Database>()
+//const supabase = createClient<Database>()
 
 export default function ConstellationDetailPage() {
   const { id } = useParams()

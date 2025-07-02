@@ -1,10 +1,9 @@
 //✅ B5 create-constellation/route.ts（星座DAO生成API）
 
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  const supabase = createClient()
   const body = await req.json()
   const { name, description } = body
 
