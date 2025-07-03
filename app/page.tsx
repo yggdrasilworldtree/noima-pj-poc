@@ -11,6 +11,15 @@ export default function TopPage() {
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-[#fdf6ee] font-serif">
 
+      {/* 背景画像 */}
+      <Image
+        src="/tree-bg.png"
+        alt="Tree Background"
+        fill
+        className="object-cover object-center pointer-events-none z-0"
+        priority
+      />
+
       {/* ロゴとEnterボタン */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
         <h1 className="text-6xl font-bold text-brown-800 drop-shadow-lg">Noima</h1>
