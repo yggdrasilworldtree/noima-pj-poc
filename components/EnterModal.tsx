@@ -1,35 +1,32 @@
 'use client'
 
-interface Props {
-  onClose: () => void
-}
+import Link from 'next/link'
+import { ReactNode } from 'react'
 
-export default function EnterModal({ onClose }: Props) {
+export default function EnterModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-[#fdf6ee] rounded-xl p-8 shadow-xl w-80 space-y-4 text-center">
-        <h2 className="text-2xl font-bold text-brown-800 mb-4">Noima</h2>
-
-        <button className="w-full py-2 bg-[#e0eecf] rounded-md hover:bg-[#d4e2c5]">
-          🌳 Tree of Questions
-        </button>
-        <button className="w-full py-2 bg-[#fde3c4] rounded-md hover:bg-[#fcd8b0]">
-          🔥 Extinguish
-        </button>
-        <button className="w-full py-2 bg-[#e3e9f8] rounded-md hover:bg-[#d1dbf0]">
-          ♻️ Reignite
-        </button>
-        <button className="w-full py-2 bg-[#eee6f4] rounded-md hover:bg-[#e1d9ed]">
-          ⚙️ Settings
-        </button>
-
-        <button
-          onClick={onClose}
-          className="mt-4 text-sm text-gray-500 hover:underline"
-        >
+    <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+      <div className="bg-[#fffaf1] rounded-2xl p-8 shadow-lg w-80 space-y-4 text-brown-800">
+        <h2 className="text-3xl font-bold text-center mb-4">Noima</h2>
+        <MenuItem href="/tree" icon="🌳">Tree of Questions</MenuItem>
+        <MenuItem href="/extinguish" icon="🔥">Extinguish</MenuItem>
+        <MenuItem href="/reignite" icon="♻️">Reignite</MenuItem>
+        <MenuItem href="/settings" icon="⚙️">Settings</MenuItem>
+        <button onClick={onClose} className="w-full mt-2 text-sm text-gray-500 hover:underline">
           Close
         </button>
       </div>
     </div>
+  )
+}
+
+function MenuItem({ href, icon, children }: { href: string, icon: string, children: ReactNode }) {
+  return (
+    <Link href={href}>
+      <div className="flex items-center px-4 py-2 rounded-xl bg-[#f5e6d4] hover:bg-[#ecdcc5] transition cursor-pointer">
+        <span className="text-xl mr-3">{icon}</span>
+        <span className="text-md font-medium">{children}</span>
+      </div>
+    </Link>
   )
 }
