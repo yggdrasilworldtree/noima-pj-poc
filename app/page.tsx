@@ -16,7 +16,7 @@ export default function TopPage() {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        className="z-0 pointer-events-none"
+        className="z-50 pointer-events-none"
         priority
       />
 
