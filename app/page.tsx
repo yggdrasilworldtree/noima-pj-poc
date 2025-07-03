@@ -1,5 +1,6 @@
 'use client'
 
+import './globals.css'
 import Image from 'next/image'
 import { useState } from 'react'
 import EnterModal from '@/components/EnterModal'

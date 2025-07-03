@@ -1,4 +1,7 @@
 // app/layout.tsx
+import './globals.css'
+
+
 export const metadata = {
   title: 'Noima',
   description: 'Noima App',
