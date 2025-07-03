@@ -1,5 +1,3 @@
-app/page.tsxのバックアップ
-
 // ✅ A1 トップページ（app/page.tsx）
 'use client'
 
