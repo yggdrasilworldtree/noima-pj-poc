@@ -9,14 +9,6 @@ export default function TopPage() {
 
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-[#fdf6ee]">
-      {/* 背景画像 */}
-      <Image
-        src="/tree-bg.png"
-        alt="Tree Background"
-        fill
-        className="object-cover object-center pointer-events-none z-0"
-        priority
-      />
 
       {/* ロゴとボタン（オーバーレイ背景つき） */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
