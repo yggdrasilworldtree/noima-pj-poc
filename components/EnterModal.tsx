@@ -9,7 +9,7 @@ export default function EnterModal({ onClose }: { onClose: () => void }) {
       <div className="bg-white rounded-2xl p-6 shadow-2xl w-80 space-y-4">
         <h2 className="text-3xl font-bold text-center text-gray-800">Noima</h2>
 
-        <MenuItem href="/tree" icon="🌳">Tree of Questions</MenuItem>
+        <MenuItem href="/home" icon="🌳">Tree of Questions</MenuItem>
         <MenuItem href="/extinguish" icon="🔥">Extinguish</MenuItem>
         <MenuItem href="/reignite" icon="♻️">Reignite</MenuItem>
         <MenuItem href="/settings" icon="⚙️">Settings</MenuItem>
