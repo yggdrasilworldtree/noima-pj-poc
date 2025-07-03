@@ -1,8 +1,22 @@
-export default function TreeIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 64 64" fill="none">
-      <circle cx="32" cy="24" r="20" fill="#6c9a56" />
-      <rect x="28" y="32" width="8" height="20" rx="2" fill="#8B5E3C" />
-    </svg>
-  )
+// components/TreeIcon.tsx
+import TreeStage1 from './TreeStage1'
+import TreeStage2 from './TreeStage2'
+import TreeStage3 from './TreeStage3'
+
+interface Props {
+  status: 'sprouting' | 'growing' | 'ripe' | string
+  className?: string
+}
+
+export default function TreeIcon({ status, className }: Props) {
+  switch (status) {
+    case 'sprouting':
+      return <TreeStage1 className={className} />
+    case 'growing':
+      return <TreeStage2 className={className} />
+    case 'ripe':
+      return <TreeStage3 className={className} />
+    default:
+      return <TreeStage1 className={className} />
+  }
 }
