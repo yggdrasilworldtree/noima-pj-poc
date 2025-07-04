@@ -482,6 +482,7 @@ export type Database = {
           id: string
           score: number | null
           status: string | null
+          seed_count: number
           title: string
           user_id: string | null
         }

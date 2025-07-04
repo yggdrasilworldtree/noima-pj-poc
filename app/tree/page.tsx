@@ -4,25 +4,25 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { supabase } from '@/utils/supabase/client'
 
-type Tree = {
+type tree = {
   id: string
   title: string
   status: 'sprouting' | 'growing' | 'fruiting'
   score: number
   created_at: string
   user_id: string
-  revive_count?: number
+  seed_count?: number
 }
 
 // 🌱 状態アイコンのマッピング
-const statusIcons: Record<Tree['status'], string> = {
+const statusIcons: Record<tree['status'], string> = {
   sprouting: '🌱',
   growing: '🌿',
   fruiting: '🍎',
 }
 
 export default function TreePage() {
-  const [trees, setTrees] = useState<Tree[]>([])
+  const [trees, setTrees] = useState<tree[]>([])
 
   useEffect(() => {
     async function fetchTrees() {
@@ -61,9 +61,9 @@ export default function TreePage() {
               <p className="text-sm text-brown-600">
                 状態：{q.status}・投稿：{new Date(q.created_at).toLocaleDateString()}
               </p>
-              {typeof q.revive_count === 'number' && (
+              {typeof q.seed_count === 'number' && (
                 <p className="text-xs text-brown-500 mt-1">
-                  🔁 再燃：{q.revive_count} 回
+                  🔁 種拾い：{q.seed_count} 回
                 </p>
               )}
             </Link>
