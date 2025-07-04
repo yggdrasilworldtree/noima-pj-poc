@@ -2,20 +2,19 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { createClient } from '@/utils/supabase/client'
+import { supabase  } from '../../utils/supabase/client'
 
 type tree = {
   id: string
   title: string
   status: string
-  score: int4
+  score: number
   created_at: string
   user_id: string
 }
 
 export default function TreePage() {
-  const [Trees, setTrees] = useState<Tree[]>([])
-  const supabase = createClient()
+  const [trees, setTrees] = useState<tree[]>([])
 
   useEffect(() => {
     async function fetchTrees() {
@@ -41,13 +40,13 @@ export default function TreePage() {
 
         {/* ▼ 問いカード一覧 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {Trees.map((q) => (
+          {trees.map((q) => (
             <Link
               href={`/tree/${q.id}`}
               key={q.id}
               className="border rounded-xl p-4 shadow bg-white hover:shadow-md transition"
             >
-              <h2 className="text-lg font-semibold line-clamp-2">{q.text}</h2>
+              <h2 className="text-lg font-semibold line-clamp-2">{q.title}</h2>
               <p className="text-sm text-brown-600 mt-1">
                 状態：{q.status}・投稿：{new Date(q.created_at).toLocaleDateString()}
               </p>
