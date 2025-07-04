@@ -19,7 +19,7 @@ export default function TreePage() {
   useEffect(() => {
     async function fetchTrees() {
       const { data, error } = await supabase
-        .from('Trees')
+        .from('trees')
         .select('*')
         .order('created_at', { ascending: false })
 
